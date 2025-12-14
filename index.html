@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resonance — Entanglement-Inspired Soulmate Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">R</div>
+      <div>
+        <h1>Resonance <span class="sub">— entanglement-inspired soulmate demo</span></h1>
+        <p class="tagline">A lightweight, link-shareable interactive that teaches: correlation ≠ communication, and correlations degrade with “noise”.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card">
+      <h2>What you’re seeing (user-friendly + professor-safe)</h2>
+      <p>
+        This demo does <strong>not</strong> claim humans are literally quantum-entangled.
+        Instead, it uses the <strong>logic entanglement is inferred by</strong> in physics:
+        <em>you don’t observe entanglement directly — you infer it from persistent, non-classical correlations.</em>
+      </p>
+      <ul>
+        <li><strong>Entanglement (concept):</strong> a joint description where outcomes are best explained relationally, via correlation patterns.</li>
+        <li><strong>What it can do:</strong> create correlations that are hard to mimic classically; enable verification/tamper-evidence.</li>
+        <li><strong>What it can’t do:</strong> transmit a controllable message (each side still looks random on its own).</li>
+        <li><strong>Decoherence:</strong> correlations degrade when the “environment” (noise/interference) increases.</li>
+      </ul>
+      <p class="small">
+        In this demo, you (User A) are compared against a pool of candidates. One candidate is secretly the “linked” partner
+        (strong correlation). Others are baseline (chance correlation). As trials accumulate, the linked partner rises.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Soulmate Finder</h2>
+
+      <div class="controls">
+        <div class="control">
+          <label for="trials">Trials (interaction moments): <span id="trialsVal">40</span></label>
+          <input id="trials" type="range" min="10" max="200" value="40" />
+        </div>
+
+        <div class="control">
+          <label for="candidates">Candidate pool size: <span id="candidatesVal">12</span></label>
+          <input id="candidates" type="range" min="5" max="30" value="12" />
+        </div>
+
+        <div class="control">
+          <label for="noise">Environment “noise” (decoherence): <span id="noiseVal">0.15</span></label>
+          <input id="noise" type="range" min="0" max="1" step="0.01" value="0.15" />
+          <div class="hint">Higher noise flips correlated outcomes more often → correlation degrades.</div>
+        </div>
+
+        <div class="buttons">
+          <button id="runBtn">Run Probe</button>
+          <button id="rerollBtn" class="ghost">New Hidden Soulmate</button>
+        </div>
+      </div>
+
+      <div class="result">
+        <div class="pill" id="statusPill">Ready</div>
+        <div class="summary">
+          <div>
+            <div class="k">Top match</div>
+            <div class="v" id="topMatch">—</div>
+          </div>
+          <div>
+            <div class="k">Correlation (top)</div>
+            <div class="v" id="topCorr">—</div>
+          </div>
+          <div>
+            <div class="k">Estimated decoherence</div>
+            <div class="v" id="decoherenceLabel">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tableWrap">
+        <table id="rankingTable" aria-label="Candidate ranking by inferred correlation">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Candidate</th>
+              <th>Correlation</th>
+              <th>Interpretation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <details class="small">
+        <summary>Show the “physics translation” of the demo’s numbers</summary>
+        <div class="callout">
+          <p>
+            Each trial produces two outcomes, one for you (A) and one for each candidate (B):
+            <strong>±1</strong> (think “agree/disagree”, “left/right”, etc.). Your outcomes are random.
+          </p>
+          <p>
+            For the hidden soulmate, B is generated to match A most of the time. Noise flips B with probability = <code>noise</code>.
+            So expected correlation ≈ <code>1 - 2·noise</code>.
+          </p>
+          <p>
+            For baseline candidates, B is independent random → expected correlation ≈ 0 (up to sampling wiggles).
+          </p>
+          <p>
+            The demo “finds the soulmate” by ranking candidates by the observed correlation
+            <code>corr = average(A·B)</code>. With enough trials, the linked partner stands out unless noise is too high.
+          </p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p class="small">
+      Tip for a write-up: “Entanglement is inferred from correlations; decoherence reduces correlations; no-signaling means local results appear random.”
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
