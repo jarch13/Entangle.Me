@@ -3,58 +3,69 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resonance — Entangle.Me Demo</title>
+  <title>Entangle.Me — Entanglement-Inspired Soulmate Demo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="wrap">
     <div class="brand">
       <div class="logo" aria-hidden="true">E.Me</div>
       <div>
-        <h1>Entangle.Me <span class="sub">— entanglement inspired soulmate demo</span></h1>
-        <p class="tagline">A lightweight, link shareable interactive that teaches concepts of entanglement in a fun way!</p>
+        <h1>Entangle.Me <span class="sub">— entanglement-inspired soulmate demo</span></h1>
+        <p class="tagline">A lightweight, link-shareable interactive that teaches entanglement concepts in a fun way.</p>
       </div>
     </div>
   </header>
+
   <main class="wrap grid">
-    <section class="card">
-      <h2>Welcome to Entangle.Me!</h2>
-      <p>
-        Somewhere in the universe, a small number of people are fundamentally linked to you. 
-        <strong>Not</strong> because of destiny.
-        <strong>Not</strong> because of romantic algorithms.
-        <strong>Because</strong> at a deep, quantum level, their states are correlated with yours in a way that can’t be explained.
+    <!-- Left column: story + demo explainer -->
+    <div class="stack">
+      <section class="card">
+        <h2>Welcome to Entangle.Me!</h2>
+        <p>
+          Somewhere in the universe, a small number of people are fundamentally linked to you.
+          <strong>Not</strong> because of destiny.
+          <strong>Not</strong> because of romantic algorithms.
+          <strong>Because</strong> at a deep, quantum level, their states are correlated with yours in a way that can’t be explained away as “just chance.”
+        </p>
+
         <ul>
-          <li>You don't know who they are.</li>
-          <li>They don't know who you are.</li>
+          <li>You don’t know who they are.</li>
+          <li>They don’t know who you are.</li>
           <li>But when you meet them, something locks into place.</li>
           <li>You feel it. They feel it. The universe feels it.</li>
         </ul>
-        <strong>Entangle.Me</strong> doesn't create soulmates.
-        It reveals existing quantum correlations.
-      </p>
-    </section>
 
-  <main class="wrap grid">
-    <section class="card">
-      <h2>What you’re seeing (DEMO)</h2>
-      <p>
-        This demo does <strong>not</strong> claim humans are literally quantum entangled.
-        Instead, it uses the <strong>logic entanglement is inferred by</strong> in physics:
-        <em>you don’t observe entanglement directly, you infer it from persistent, non-classical correlations.</em>
-      </p>
-      <ul>
-        <li><strong>Entanglement (concept):</strong> a joint description where outcomes are best explained relationally, via correlation patterns.</li>
-        <li><strong>What it can do:</strong> create correlations that are hard to mimic classically.</li>
-        <li><strong>What it can’t do:</strong> transmit a controllable message (each side still looks random on its own).</li>
-        <li><strong>Decoherence:</strong> correlations degrade when the “environment” (noise/interference) increases.</li>
-      </ul>
-      <p class="small">
-        In this demo, you (User A) are compared against a pool of candidates. One candidate is secretly the “linked” partner
-        (strong correlation). Others are baseline (chance correlation). As trials accumulate, the linked partner rises.
-      </p>
-    </section>
+        <p>
+          <strong>Entangle.Me</strong> doesn’t create soulmates.
+          It reveals existing quantum correlations.
+        </p>
+      </section>
 
+      <section class="card">
+        <h2>What you’re seeing (the demo)</h2>
+        <p>
+          This demo does <strong>not</strong> claim humans are literally quantum-entangled.
+          Instead, it uses the <strong>logic entanglement is inferred by</strong> in physics:
+          <em>you don’t observe entanglement directly; you infer it from persistent, non-classical correlations.</em>
+        </p>
+
+        <ul>
+          <li><strong>Entanglement (concept):</strong> a joint description where outcomes are best explained relationally, via correlation patterns.</li>
+          <li><strong>What it can do:</strong> produce correlations that are hard to mimic classically.</li>
+          <li><strong>What it can’t do:</strong> transmit a controllable message (each side still looks random on its own).</li>
+          <li><strong>Decoherence:</strong> correlations degrade when the “environment” (noise/interference) increases.</li>
+        </ul>
+
+        <p class="small">
+          In this demo, you (User A) are compared against a pool of candidates. One candidate is secretly the “linked” partner
+          (strong correlation). Others are baseline (chance-like correlation). As trials accumulate, the linked partner rises.
+        </p>
+      </section>
+    </div>
+
+    <!-- Right column: interactive -->
     <section class="card">
       <h2>Soulmate Finder</h2>
 
@@ -124,7 +135,7 @@
           </p>
           <p>
             For the hidden soulmate, B is generated to match A most of the time. Noise flips B with probability = <code>noise</code>.
-            So expected correlation ≈ <code>1 - 2·noise</code>.
+            So expected correlation ≈ <code>1 − 2·noise</code>.
           </p>
           <p>
             For baseline candidates, B is independent random → expected correlation ≈ 0.
@@ -140,7 +151,8 @@
 
   <footer class="wrap footer">
     <p class="small">
-      Thanks for testing my demo! “Entanglement is inferred from correlations; decoherence reduces correlations; no-signaling means local results appear random.”
+      Thanks for testing my demo!
+      Entanglement is inferred from correlations; decoherence reduces correlations; no-signaling means local results appear random.
     </p>
   </footer>
 
